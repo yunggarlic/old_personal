@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Scene, Navbar, Navbox } from './components';
 import { Box, Container } from '@material-ui/core';
 import useStyles from './styles/material-styles';
-//hello
 
 export default function Home() {
   const { main, content } = useStyles();
