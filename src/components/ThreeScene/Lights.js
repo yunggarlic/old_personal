@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-// import { SpotLightHelper } from 'three';
-// import { useHelper } from '@react-three/drei';
+import { SpotLightHelper } from 'three';
+import { useHelper } from '@react-three/drei';
 
 export default function Lights() {
   const spotLight = useRef();
+  const pointLight = useRef();
+  const pointLight2 = useRef();
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
@@ -12,7 +14,12 @@ export default function Lights() {
     //with y position, light swings circular
     //without, like a pendulum
     spotLight.current.position.x = 10 * Math.sin(t) + 1;
-    // spotLight.current.position.y = 10 * Math.cos(t) + 1;
+
+    // pointLight.current.position.z = 20 * Math.sin(t) + 100;
+    // pointLight.current.position.y = 10 * Math.cos(t) + 110;
+
+    // pointLight2.current.position.z = -20 * Math.sin(t) + 100;
+    // pointLight2.current.position.y = 10 * Math.cos(t) + 90;
   });
 
   // useHelper(spotLight, SpotLightHelper, 'red');
@@ -21,13 +28,12 @@ export default function Lights() {
     <>
       <spotLight
         ref={spotLight}
-        position={[0, 10, 0]}
-        angle={0.8}
-        penumbra={1}
+        position={[0, 20, 0]}
+        angle={1}
+        penumbra={0.5}
         intensity={0.05}
-        castShadow
-        shadow-mapSize-width={512}
-        shadow-mapSize-height={512}
+        // shadow-mapSize-width={512}
+        // shadow-mapSize-height={512}
       ></spotLight>
     </>
   );
