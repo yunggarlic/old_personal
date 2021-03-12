@@ -16,7 +16,8 @@ export default function Controls({ isFocus, setActive }) {
   } else if (isFocus === 'bonus') {
     focusCoords = { x: 32, y: 100, z: 32 };
   } else if (isFocus === 'work') {
-    focusCoords = { x: 150, y: 150, z: 5 };
+    focusCoords = { x: -205, y: -200, z: -120 };
+    lookFocus = { x: -190, y: -200, z: -200 };
   } else {
     focusCoords = isFocus;
   }
@@ -35,22 +36,23 @@ export default function Controls({ isFocus, setActive }) {
 
   useFrame(({ camera, clock }) => {
     const t = clock.getElapsedTime();
-    camera.lookAt(fx.value, fy.value, fz.value);
 
     setTimeout(() => {
-      if (mx.done === false || my.done === false || mz.done === false) {
+      if (
+        camera.position &&
+        (mx.done === false || my.done === false || mz.done === false)
+      ) {
         setActive(false);
-        if (camera.position) {
-          camera.position.x = mx.value;
-          camera.position.y = my.value;
-          camera.position.z = mz.value;
-        }
+        camera.position.x = mx.value;
+        camera.position.y = my.value;
+        camera.position.z = mz.value;
+        camera.updateProjectionMatrix();
       } else {
         setActive(true);
       }
 
-      camera.updateProjectionMatrix();
-    }, 100);
+      camera.lookAt(fx.value, fy.value, fz.value);
+    }, 30);
   });
 
   return null;

@@ -13,7 +13,7 @@ export default function Lights() {
 
     //with y position, light swings circular
     //without, like a pendulum
-    spotLight.current.position.x = 10 * Math.sin(t) + 1;
+    spotLight.current.position.x = Math.sin(t) + 1;
 
     // pointLight.current.position.z = 20 * Math.sin(t) + 100;
     // pointLight.current.position.y = 10 * Math.cos(t) + 110;
@@ -29,7 +29,7 @@ export default function Lights() {
       <spotLight
         ref={spotLight}
         position={[0, 20, 0]}
-        angle={1}
+        angle={0.7}
         penumbra={0.5}
         intensity={0.05}
         // shadow-mapSize-width={512}

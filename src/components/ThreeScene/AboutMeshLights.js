@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 
 export default function AboutMeshLights() {
@@ -18,9 +18,9 @@ export default function AboutMeshLights() {
     <>
       <pointLight
         ref={pointLight}
-        color={0x0040ff}
+        color={0x26ab33}
         decay={2}
-        intensity={0.5}
+        intensity={0.1}
         distance={50}
       >
         <mesh>
@@ -31,8 +31,8 @@ export default function AboutMeshLights() {
       <pointLight
         ref={pointLight2}
         color={0xfa3874}
-        decay={8}
-        intensity={0.5}
+        decay={2}
+        intensity={0.1}
         distance={50}
       >
         <mesh>

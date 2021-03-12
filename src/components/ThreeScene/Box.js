@@ -8,12 +8,12 @@ import niceColors from 'nice-color-palettes';
 export default function Box(props) {
   const { number } = props;
   const [ref, api] = useBox(() => ({
-    mass: 0.0001,
+    mass: 0.1,
     args: [0.1, 0.1, 0.1],
     position: [
-      Math.random() - 0.5,
-      2 + Math.random() * 15,
-      Math.random() - 0.5,
+      Math.random() - 200,
+      Math.random() - 200,
+      Math.random() * 2 - 160,
     ],
   }));
 
@@ -36,9 +36,9 @@ export default function Box(props) {
     api
       .at(Math.floor(Math.random() * number))
       .position.set(
-        Math.random() - 0.5,
-        (Math.random() + 10) * 10,
-        Math.random() - 0.5
+        Math.random() - 200,
+        Math.random() - 200,
+        Math.random() * 2 - 130
       )
   );
 
