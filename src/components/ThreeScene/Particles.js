@@ -3,9 +3,8 @@ import { useFrame, useThree } from 'react-three-fiber';
 import * as THREE from 'three';
 import niceColors from 'nice-color-palettes';
 
-export default function Particles({ count }) {
+export default function Particles({ count, active, setActive }) {
   const mesh = useRef();
-  const light = useRef();
 
   const colors = useMemo(() => {
     const array = new Float32Array(count * 3);
@@ -38,11 +37,15 @@ export default function Particles({ count }) {
   // The innards of this hook will run every frame
   useFrame((state) => {
     // Run through the randomized data to calculate some movement
+
+    //if we want animation to stop while camera moves (reduce clipping)
+    // if(active){}
+
     particles.forEach((particle, i) => {
       let { t, factor, speed, xFactor, yFactor, zFactor } = particle;
 
       // There is no sense or reason to any of this, just messing around with trigonometric functions
-      t = particle.t += speed / 2;
+      t = particle.t += speed / 6;
       const a = Math.cos(t) + Math.sin(t * 1) / 10;
       const b = Math.sin(t) + Math.cos(t * 2) / 10;
       const s = Math.cos(t);
@@ -74,13 +77,16 @@ export default function Particles({ count }) {
   return (
     <>
       <instancedMesh ref={mesh} args={[null, null, count]}>
-        <dodecahedronBufferGeometry args={[1, 0]}>
+        <tetrahedronBufferGeometry args={[1, 0]}>
           <instancedBufferAttribute
             attachObject={['attributes', 'color']}
             args={[colors, 3]}
           />
-        </dodecahedronBufferGeometry>
-        <meshStandardMaterial vertexColors={THREE.VertexColors} />
+        </tetrahedronBufferGeometry>
+        <meshStandardMaterial
+          clipIntersection={true}
+          vertexColors={THREE.VertexColors}
+        />
       </instancedMesh>
     </>
   );

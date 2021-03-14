@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, Fade, Button } from '@material-ui/core';
+import { Box, Typography, Fade, Button } from '@material-ui/core';
 import useStyles from '../styles/material-styles';
 
-export default function Navbar() {
-  const { navbar, nav, middlenav } = useStyles();
+export default function Navbar({ isFocus, setFocus }) {
+  const { navbar, navButton, navButtonDisabled } = useStyles();
   const [loaded, setLoaded] = useState(false);
 
+  const applyFocus = (e) => {
+    const focus = e.target.innerHTML;
+    setFocus(focus);
+  };
+
   useEffect(() => {
-    setTimeout(() => setLoaded(true), 500);
+    setTimeout(() => {
+      setFocus('home');
+      setLoaded(true);
+    }, 2000);
 
     return () => {
       setLoaded(false);
@@ -15,20 +23,33 @@ export default function Navbar() {
   }, []);
 
   return (
-    <Container className={nav}>
-      <Button color="secondary" id="about">{`< about`}</Button>
-      <Container className={middlenav}>
-        <Button color="secondary" id="home">{`^ home`}</Button>
-        <Fade in={loaded} timeout={500} unmountOnExit>
-          <Container className={navbar}>
-            <Typography variant="h1" color="primary">
-              Hello
-            </Typography>
-          </Container>
-        </Fade>
-        <Button color="secondary" id="work">{`v work`}</Button>
-      </Container>
-      <Button color="secondary" id="bonus">{`> bonus`}</Button>
-    </Container>
+    <Fade in={loaded} timeout={2000}>
+      <Box className={navbar}>
+        <Button
+          color="secondary"
+          onClick={applyFocus}
+          id="home"
+          disabled={isFocus === 'home'}
+        >{`home`}</Button>
+        <Button
+          onClick={applyFocus}
+          color="secondary"
+          id="about"
+          disabled={isFocus === 'about'}
+        >{`about`}</Button>
+        <Button
+          onClick={applyFocus}
+          color="secondary"
+          id="work"
+          disabled={isFocus === 'work'}
+        >{`work`}</Button>
+        <Button
+          onClick={applyFocus}
+          color="secondary"
+          id="bonus"
+          disabled={isFocus === 'bonus'}
+        >{`bonus`}</Button>
+      </Box>
+    </Fade>
   );
 }

@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import { Scene, Navbar, Navbox } from './components';
+import { Scene, Navbar, Navbox, Content, Home } from './components';
 import { Box, Container } from '@material-ui/core';
 import useStyles from './styles/material-styles';
+// import { Stats } from '@react-three/drei';
 
-export default function Home() {
-  const { main, content } = useStyles();
-  const [isFocus, setFocus] = useState(false);
+export default function Main() {
+  const { main, scene } = useStyles();
+  const [isFocus, setFocus] = useState('home');
   return (
     <Box className={main}>
-      <Container maxWidth="sm" className={content}>
-        <Navbar id="nav" />
-        {/* <Navbox /> */}
-      </Container>
-      <Scene id="scene" isFocus={isFocus} setFocus={setFocus} />
+      <Navbar id="nav" isFocus={isFocus} setFocus={setFocus} />
+      <Content isFocus={isFocus} />
+      <Box className={scene}>
+        <Scene id="scene" isFocus={isFocus} setFocus={setFocus} />
+      </Box>
+      {/* <Stats /> */}
     </Box>
   );
 }
