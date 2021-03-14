@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { useFrame, extend } from 'react-three-fiber';
 import { SpotLightHelper } from 'three';
-import { useHelper } from '@react-three/drei';
-import { EffectComposer, GodRays } from '@react-three/postprocessing';
+// import { useHelper } from '@react-three/drei';
+// import { EffectComposer, GodRays } from '@react-three/postprocessing';
 // import {
 //   EffectComposer,
 //   BlendFunction,

@@ -1,5 +1,8 @@
+export { default as About } from './About';
+export { default as Content } from './Content';
+export { default as Home } from './Home';
 export { default as Navbar } from './Navbar';
-export { default as Navbox } from './Navbox';
+export { default as Work } from './Work';
 
 export { default as AboutMesh } from './ThreeScene/AboutMesh';
 export { default as Box } from './ThreeScene/Box';

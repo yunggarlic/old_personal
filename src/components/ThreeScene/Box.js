@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 import { useFrame, useThree, useResource } from 'react-three-fiber';
 import { useBox } from '@react-three/cannon';
 import * as THREE from 'three';
-import { TransformControls } from '@react-three/drei';
 import niceColors from 'nice-color-palettes';
 
 export default function Box(props) {

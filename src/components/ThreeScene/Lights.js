@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { SpotLightHelper } from 'three';
-import { useHelper } from '@react-three/drei';
+// import { useHelper } from '@react-three/drei';
 
 export default function Lights() {
   const spotLight = useRef();
