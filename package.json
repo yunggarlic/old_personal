@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "@react-spring/three": "^9.0.0-rc.3",
     "@react-three/cannon": "^0.6.1",
     "@react-three/drei": "^3.11.0",

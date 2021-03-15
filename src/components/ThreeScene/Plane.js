@@ -24,7 +24,7 @@ export default function Plane(props) {
 
   return (
     <>
-      <WorkLight planeRef={ref} />
+      <WorkLight isFocus={props.isFocus} planeRef={ref} />
       <animated.mesh castShadow ref={ref} color={x.background} receiveShadow>
         <boxBufferGeometry attach="geometry" args={[5, 5, 5]} />
         <animated.meshPhongMaterial color={x.background} />

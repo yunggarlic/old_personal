@@ -31,7 +31,7 @@ export default function Controls({ isFocus, setActive }) {
     fx: lookFocus.x,
     fy: lookFocus.y,
     fz: lookFocus.z,
-    config: { mass: 50, friction: 150 },
+    config: { mass: 15, friction: 90 },
   });
 
   useFrame(({ camera, clock }) => {

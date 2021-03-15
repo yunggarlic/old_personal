@@ -20,13 +20,13 @@ export default function Scene({ isFocus, setFocus }) {
         setActive={setActive}
         active={active}
       />
-      <Lights />
+      <Lights isFocus={isFocus} />
 
       <Particles setActive={setActive} active={active} count={250} />
       <AboutMesh position={[100, 100, 100]} scale={[0.5, 0.5, 0.5]} />
 
       <Physics gravity={[0, 0, -10]}>
-        <Plane position={[-200, -205, -200]} />
+        <Plane isFocus={isFocus} position={[-200, -205, -200]} />
         <Box number={250} />
       </Physics>
       <Effects>

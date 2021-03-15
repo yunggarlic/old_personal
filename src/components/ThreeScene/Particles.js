@@ -48,7 +48,7 @@ export default function Particles({ count, active, setActive }) {
       t = particle.t += speed / 6;
       const a = Math.cos(t) + Math.sin(t * 1) / 10;
       const b = Math.sin(t) + Math.cos(t * 2) / 10;
-      const s = Math.cos(t);
+      const s = Math.cos(t) * 2;
 
       // Update the dummy object
       dummy.position.set(

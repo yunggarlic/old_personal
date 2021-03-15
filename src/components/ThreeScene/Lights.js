@@ -1,40 +1,32 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { SpotLightHelper } from 'three';
+import { useSpring, animated } from 'react-spring/three';
+// import { SpotLightHelper } from 'three';
 // import { useHelper } from '@react-three/drei';
 
-export default function Lights() {
+export default function Lights({ isFocus }) {
   const spotLight = useRef();
-  const pointLight = useRef();
-  const pointLight2 = useRef();
-
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime();
-
-    //with y position, light swings circular
-    //without, like a pendulum
-    spotLight.current.position.x = Math.sin(t) + 1;
-
-    // pointLight.current.position.z = 20 * Math.sin(t) + 100;
-    // pointLight.current.position.y = 10 * Math.cos(t) + 110;
-
-    // pointLight2.current.position.z = -20 * Math.sin(t) + 100;
-    // pointLight2.current.position.y = 10 * Math.cos(t) + 90;
+  const [toggle, setToggle] = useState(false);
+  const { intensity: value } = useSpring({
+    intensity: toggle ? 0.05 : 0,
+    config: { mass: 15, tension: 15, friction: 50 },
   });
 
-  // useHelper(spotLight, SpotLightHelper, 'red');
+  useFrame(({ clock }) => {
+    isFocus === 'home' ? setToggle(true) : setToggle(false);
+  });
 
   return (
     <>
-      <spotLight
+      <animated.spotLight
         ref={spotLight}
-        position={[0, 20, 0]}
-        angle={0.7}
+        position={[0, 175, 0]}
+        angle={0.4}
         penumbra={0.5}
-        intensity={0.05}
+        intensity={value}
         // shadow-mapSize-width={512}
         // shadow-mapSize-height={512}
-      ></spotLight>
+      ></animated.spotLight>
     </>
   );
 }
