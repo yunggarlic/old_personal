@@ -49,7 +49,7 @@ export default function About(props) {
           startIcon={<LinkedIn />}
           variant="contained"
           color="secondary"
-          href="www.linkedin.com/in/timferrari"
+          href="http://www.linkedin.com/in/timferrari"
         >
           Linkedin
         </Button>
