@@ -7,4 +7,4 @@ You can visit it at timferrari.herokuapp.com
 React, Threejs, React-Three-Fiber, React-Spring, Material UI, Express, Webpack
 
 #Instructions
-If you want to download the source and it run it yourself, type ```bash npm run start-dev``` in your terminal
+If you want to download the source and it run it yourself, type ```npm run start-dev``` in your terminal
