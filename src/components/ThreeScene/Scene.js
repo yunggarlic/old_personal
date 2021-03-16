@@ -4,8 +4,9 @@ import { Lights, Particles, AboutMesh, Plane, Box, WorkLight } from '../';
 import Controls from './Controls';
 import { Effects } from '@react-three/drei';
 import { Physics } from '@react-three/cannon';
+// import { EffectComposer, Bloom } from '@react-three/postprocessing';
 
-export default function Scene({ isFocus, setFocus }) {
+export default function Scene({ isFocus, setFocus, onMobile }) {
   const [active, setActive] = useState(true);
 
   return (
@@ -18,6 +19,7 @@ export default function Scene({ isFocus, setFocus }) {
         isFocus={isFocus}
         setFocus={setFocus}
         setActive={setActive}
+        onMobile={onMobile}
         active={active}
       />
       <Lights isFocus={isFocus} />

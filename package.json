@@ -20,6 +20,7 @@
     "@react-spring/three": "^9.0.0-rc.3",
     "@react-three/cannon": "^0.6.1",
     "@react-three/drei": "^3.11.0",
+    "@react-three/postprocessing": "^1.5.2",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "nice-color-palettes": "^3.0.0",
@@ -27,6 +28,7 @@
     "postprocessing": "^6.21.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-merge-refs": "^1.1.0",
     "react-spring": "^8.0.27",
     "react-three-fiber": "^5.3.1",
     "three": "^0.125.2"

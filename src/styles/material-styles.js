@@ -1,6 +1,8 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => {
+const aspect = window.screen.width / window.screen.height;
+
+export const useStyles = makeStyles((theme) => {
   return {
     main: {
       backgroundColor: 'black',
@@ -33,21 +35,36 @@ const useStyles = makeStyles((theme) => {
       overflow: 'auto',
     },
     homeContainer: {
+      background: 'rgba(1,1,1, .95)',
+      border: '1px solid rgba(46,49,49, 1)',
+      padding: '2rem',
       position: 'absolute',
       top: '30%',
     },
     aboutContainer: {
+      background: 'rgba(46,49,49, .25)',
+      border: '1px solid rgba(46,49,49, 1)',
+      padding: '1rem',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-end',
+      alignItems: 'flex-start',
       alignSelf: 'flex-end',
       position: 'absolute',
-      width: '67%',
+      maxWidth: '60%',
+      maxHeight: '75%',
+      overflowY: 'auto',
     },
     workContainer: {
+      background: 'rgba(22,25,25, .6)',
+      border: '1px solid rgba(46,49,49, 1)',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      alignItems: 'flex-end',
+      alignItems: 'flex-start',
       position: 'absolute',
-      width: '67%',
+      padding: '10px 20px',
+      maxWidth: '67%',
       alignSelf: 'flex-end',
     },
     buttonBox: {
@@ -56,7 +73,90 @@ const useStyles = makeStyles((theme) => {
       alignContent: 'flex-end',
       width: '20%',
     },
+    navButtons: {
+      // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      borderRadius: 3,
+      border: 0,
+      height: 30,
+    },
   };
 });
 
-export default useStyles;
+export const useMobileStyles = makeStyles((theme) => ({
+  main: {
+    backgroundColor: 'black',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100vw',
+    height: '100vh',
+  },
+  scene: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+  navbar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1,
+  },
+  content: {
+    display: 'flex',
+    height: '100%',
+    top: '10%',
+    width: '80%',
+    position: 'relative',
+    // flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1,
+    overflow: 'auto',
+  },
+  homeContainer: {
+    background: 'rgba(1,1,1, .95)',
+    border: '1px solid rgba(46,49,49, 1)',
+    padding: '2rem',
+    position: 'absolute',
+    top: '30%',
+  },
+  aboutContainer: {
+    background: 'rgba(46,49,49, .25)',
+    border: '1px solid rgba(46,49,49, 1)',
+    padding: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-start',
+    alignSelf: 'start',
+    position: 'absolute',
+    maxWidth: '60%',
+    maxHeight: '75%',
+    overflowY: 'auto',
+  },
+  workContainer: {
+    background: 'rgba(22,25,25, .6)',
+    border: '1px solid rgba(46,49,49, 1)',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    position: 'absolute',
+    padding: '10px 20px',
+    maxWidth: '67%',
+    alignSelf: 'start',
+  },
+  buttonBox: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'flex-end',
+    width: '20%',
+  },
+  navButtons: {
+    // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    borderRadius: 3,
+    border: 0,
+    height: 30,
+  },
+}));

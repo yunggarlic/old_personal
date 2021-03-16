@@ -77,13 +77,14 @@ export default function Particles({ count, active, setActive }) {
   return (
     <>
       <instancedMesh ref={mesh} args={[null, null, count]}>
-        <tetrahedronBufferGeometry args={[1, 0]}>
+        <octahedronBufferGeometry args={[1, 0]}>
           <instancedBufferAttribute
             attachObject={['attributes', 'color']}
             args={[colors, 3]}
           />
-        </tetrahedronBufferGeometry>
+        </octahedronBufferGeometry>
         <meshStandardMaterial
+          roughness={0.3}
           clipIntersection={true}
           vertexColors={THREE.VertexColors}
         />

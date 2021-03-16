@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Fade, Button } from '@material-ui/core';
-import useStyles from '../styles/material-styles';
+import { useStyles } from '../styles/material-styles';
 
 export default function Navbar({ isFocus, setFocus }) {
-  const { navbar, navButton, navButtonDisabled } = useStyles();
+  const { navbar, navButtons, selectedNavButtons } = useStyles();
   const [loaded, setLoaded] = useState(false);
 
   const applyFocus = (e) => {
-    const focus = e.target.innerHTML;
+    const focus = e.target.innerText.toLowerCase();
     setFocus(focus);
   };
 
@@ -26,29 +26,33 @@ export default function Navbar({ isFocus, setFocus }) {
     <Fade in={loaded} timeout={2000}>
       <Box className={navbar}>
         <Button
+          className={navButtons}
+          variant="outlined"
           color="secondary"
           onClick={applyFocus}
           id="home"
-          disabled={isFocus === 'home'}
         >{`home`}</Button>
         <Button
+          className={navButtons}
+          variant="outlined"
           onClick={applyFocus}
           color="secondary"
           id="about"
-          disabled={isFocus === 'about'}
         >{`about`}</Button>
         <Button
+          className={navButtons}
+          variant="outlined"
           onClick={applyFocus}
           color="secondary"
           id="work"
-          disabled={isFocus === 'work'}
         >{`work`}</Button>
-        <Button
+        {/* <Button
+          className={navButtons}
+          variant="outlined"
           onClick={applyFocus}
           color="secondary"
           id="bonus"
-          disabled={isFocus === 'bonus'}
-        >{`bonus`}</Button>
+        >{`bonus`}</Button> */}
       </Box>
     </Fade>
   );

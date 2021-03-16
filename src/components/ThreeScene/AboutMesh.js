@@ -18,8 +18,8 @@ export default function AboutMesh(props) {
   return (
     <>
       <mesh ref={mesh}>
-        <torusGeometry attach="geometry" args={[10, 3, 16, 100]} />
-        <meshStandardMaterial />
+        <torusGeometry attach="geometry" args={[10, 3, 32, 100]} />
+        <meshStandardMaterial roughness={0.3} />
         <AboutMeshLights />
       </mesh>
     </>

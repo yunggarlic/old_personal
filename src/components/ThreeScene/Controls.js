@@ -2,22 +2,27 @@ import React, { useEffect } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { useSpring } from 'react-spring/three';
 
-export default function Controls({ isFocus, setActive }) {
+export default function Controls({ isFocus, setActive, onMobile }) {
   let focusCoords;
   let lookFocus = { x: 0, y: 0, z: 0 };
+
   if (isFocus === 'about') {
-    focusCoords = { x: -72, y: 70, z: 244 };
+    focusCoords = onMobile
+      ? { x: -400, y: 80, z: 180 }
+      : { x: -72, y: 70, z: 244 };
     lookFocus = { x: 175, y: 110, z: 100 };
   } else if (isFocus === 'home') {
     focusCoords = { x: 150, y: 150, z: 5 };
-
-    // focusCoords = { x: -10, y: -70, z: -10 };
     lookFocus = { x: 0, y: 0, z: 0 };
   } else if (isFocus === 'bonus') {
     focusCoords = { x: 32, y: 100, z: 32 };
   } else if (isFocus === 'work') {
-    focusCoords = { x: -205, y: -200, z: -120 };
-    lookFocus = { x: -190, y: -200, z: -200 };
+    focusCoords = onMobile
+      ? { x: -220, y: -200, z: 0 }
+      : { x: -220, y: -200, z: -125 };
+    lookFocus = onMobile
+      ? { x: -200, y: -205, z: -200 }
+      : { x: -190, y: -200, z: -200 };
   } else {
     focusCoords = isFocus;
   }

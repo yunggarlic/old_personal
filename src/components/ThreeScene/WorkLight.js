@@ -16,7 +16,7 @@ export default function WorkLight({ planeRef, isFocus }) {
   const spotLight = useRef();
   const [toggle, setToggle] = useState(false);
   const { intensity: value } = useSpring({
-    intensity: toggle ? 0.03 : 0,
+    intensity: toggle ? 0.07 : 0,
     config: { mass: 15, tension: 15, friction: 15 },
   });
 
@@ -28,7 +28,7 @@ export default function WorkLight({ planeRef, isFocus }) {
 
   return (
     <>
-      <mesh ref={mesh} position={[-200, -200, -150]}>
+      <mesh ref={mesh} position={[-300, -180, -180]}>
         <sphereGeometry args={[0.1, 0.1, 0.1]} />
         <shadowMaterial />
         <animated.spotLight

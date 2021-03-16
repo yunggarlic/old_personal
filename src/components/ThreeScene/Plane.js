@@ -11,7 +11,7 @@ export default function Plane(props) {
   const x = useSpring({
     y: toggle ? -205 : -200,
     background: toggle ? '#ffffff' : '#ff78ff',
-    config: { mass: 20, tension: 100, friction: 20 },
+    config: { mass: 15, tension: 100, friction: 20 },
   });
 
   useFrame(({ clock }) => {
@@ -27,7 +27,7 @@ export default function Plane(props) {
       <WorkLight isFocus={props.isFocus} planeRef={ref} />
       <animated.mesh castShadow ref={ref} color={x.background} receiveShadow>
         <boxBufferGeometry attach="geometry" args={[5, 5, 5]} />
-        <animated.meshPhongMaterial color={x.background} />
+        <animated.meshStandardMaterial roughness={0.03} color={x.background} />
       </animated.mesh>
     </>
   );
