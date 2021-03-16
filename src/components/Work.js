@@ -77,7 +77,7 @@ export default function Work(props) {
           startIcon={<GitHub />}
           variant="contained"
           color="secondary"
-          href="www.github.com/yunggarlic"
+          href="http://www.github.com/yunggarlic"
         >
           Github
         </Button>
