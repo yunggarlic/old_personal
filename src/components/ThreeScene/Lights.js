@@ -16,6 +16,8 @@ export default function Lights({ isFocus }) {
     isFocus === 'home' ? setToggle(true) : setToggle(false);
   });
 
+  // useHelper(spotLight, SpotLightHelper, 'red');
+
   return (
     <>
       <animated.spotLight
@@ -24,6 +26,7 @@ export default function Lights({ isFocus }) {
         angle={0.4}
         penumbra={0.5}
         intensity={value}
+        distance={300}
         // shadow-mapSize-width={512}
         // shadow-mapSize-height={512}
       ></animated.spotLight>

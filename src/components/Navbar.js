@@ -46,13 +46,13 @@ export default function Navbar({ isFocus, setFocus }) {
           color="secondary"
           id="work"
         >{`work`}</Button>
-        {/* <Button
+        <Button
           className={navButtons}
           variant="outlined"
           onClick={applyFocus}
           color="secondary"
           id="bonus"
-        >{`bonus`}</Button> */}
+        >{`bonus`}</Button>
       </Box>
     </Fade>
   );
