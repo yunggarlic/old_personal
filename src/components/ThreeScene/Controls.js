@@ -15,7 +15,8 @@ export default function Controls({ isFocus, setActive, onMobile }) {
     focusCoords = { x: 150, y: 150, z: 5 };
     lookFocus = { x: 0, y: 0, z: 0 };
   } else if (isFocus === 'bonus') {
-    focusCoords = { x: 32, y: 100, z: 32 };
+    focusCoords = { x: -200, y: 270, z: -200 };
+    lookFocus = { x: 350, y: 100, z: -300 };
   } else if (isFocus === 'work') {
     focusCoords = onMobile
       ? { x: -220, y: -200, z: 0 }
@@ -51,6 +52,7 @@ export default function Controls({ isFocus, setActive, onMobile }) {
         camera.position.x = mx.value;
         camera.position.y = my.value;
         camera.position.z = mz.value;
+
         camera.updateProjectionMatrix();
       } else {
         setActive(true);

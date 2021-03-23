@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, Suspense } from 'react';
 import { Canvas, extend } from 'react-three-fiber';
-import { Lights, Particles, AboutMesh, Plane, Box, WorkLight } from '../';
+import { Lights, Particles, AboutMesh, Plane, Box, SolarSystem } from '../';
 import Controls from './Controls';
 import { Effects } from '@react-three/drei';
 import { Physics } from '@react-three/cannon';
@@ -26,6 +26,9 @@ export default function Scene({ isFocus, setFocus, onMobile }) {
 
       <Particles setActive={setActive} active={active} count={250} />
       <AboutMesh position={[100, 100, 100]} scale={[0.5, 0.5, 0.5]} />
+      <Suspense fallback={null}>
+        <SolarSystem isFocus={isFocus} />
+      </Suspense>
 
       <Physics gravity={[0, 0, -10]}>
         <Plane isFocus={isFocus} position={[-200, -205, -200]} />

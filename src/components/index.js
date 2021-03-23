@@ -12,5 +12,6 @@ export { default as Lights } from './ThreeScene/Lights';
 export { default as Particles } from './ThreeScene/Particles';
 export { default as Plane } from './ThreeScene/Plane';
 export { default as Scene } from './ThreeScene/Scene';
+export { default as SolarSystem } from './ThreeScene/SolarSystem';
 export { default as WorkMesh } from './ThreeScene/WorkMesh';
 export { default as WorkLight } from './ThreeScene/WorkLight';
