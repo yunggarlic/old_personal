@@ -31,6 +31,25 @@ export default function Work(props) {
           component="h2"
           color="primary"
         >
+          welcome to the arena - a c++ roguelite
+        </Typography>
+        <Link href="https://github.com/yunggarlic/arena">
+          <Typography
+            variant="body2"
+            align="right"
+            component="p"
+            color="secondary"
+          >
+            https://github.com/yunggarlic/arena
+          </Typography>
+        </Link>
+        <br />
+        <Typography
+          align="right"
+          variant="body1"
+          component="h2"
+          color="primary"
+        >
           statesmen - a podcast website
         </Typography>
         <Link href="http://statesmenpodcast.com">
