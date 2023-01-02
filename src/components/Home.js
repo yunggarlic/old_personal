@@ -3,6 +3,7 @@ import '../styles/home.less';
 
 export default function Home(props) {
   const { isFocus, onMobile } = props;
+
   return (
     // Must fade in and out on is focus
     <div className={`home ${isFocus === 'home' ? 'active' : ''}`}>

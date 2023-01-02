@@ -1,3 +1,29 @@
+@keyframes colors {
+  0% {
+    color: #ff7890;
+  }
+
+  20% {
+    color: #fa9e5c;
+  }
+
+  40% {
+    color: #fefe72;
+  }
+
+  60% {
+    color: #2bcf6a;
+  }
+
+  80% {
+    color: #2a5cff;
+  }
+
+  100% {
+    color: #ff7890;
+  }
+}
+
 .home {
   position: absolute;
   margin: 0 auto;
@@ -14,8 +40,14 @@
   }
 
   h1 {
+    margin: 0;
+
+    text-shadow: 0 0 2rem #000;
     text-transform: uppercase;
     font-weight: 900;
-    color: white;
+    font-size: 7.7vw;
+    font-family: 'system-ui';
+
+    animation: colors 10s linear 0s infinite normal;
   }
 }

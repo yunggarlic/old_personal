@@ -2,14 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useFrame, extend } from 'react-three-fiber';
 import { SpotLightHelper } from 'three';
 import { useSpring, animated } from 'react-spring/three';
-// import { useHelper } from '@react-three/drei';
-// import { EffectComposer, GodRays } from '@react-three/postprocessing';
-// import {
-//   EffectComposer,
-//   BlendFunction,
-//   Resizer,
-//   KernelSize,
-// } from 'postprocessing';
 
 export default function WorkLight({ planeRef, isFocus }) {
   const mesh = useRef();
