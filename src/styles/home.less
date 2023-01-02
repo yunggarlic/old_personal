@@ -1,0 +1,21 @@
+.home {
+  position: absolute;
+  margin: 0 auto;
+  padding: 2rem;
+  top: 30%;
+  transition: opacity 1s;
+  opacity: 0;
+  height: 0;
+  transition: height 0.5s, opacity 1s;
+
+  &.active {
+    opacity: 1;
+    height: fit-content
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    color: white;
+  }
+}

@@ -14,7 +14,7 @@ module.exports = {
         exclude: /node_modules/,
         use: { loader: 'babel-loader' },
       },
-      { test: /\.css$/i, use: ['style-loader', 'css-loader'] },
+      { test: /\.less$/i, use: ['style-loader', 'css-loader', 'less-loader'] },
       // {
       //   test: /\.(png|jpe?g|gif)$/i,
       //   use: [

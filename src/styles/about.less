@@ -1,0 +1,23 @@
+.about {
+  background: rgba(46, 49, 49, .25);
+  border: 1px solid rgba(46, 49, 49, 1);
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-self: flex-end;
+  position: absolute;
+  max-width: 60%;
+  max-height: 75%;
+  overflow-y: auto;
+  transition: opacity 1s;
+  display: flex;
+  opacity: 0;
+  height: 0;
+  transition: height 0.5s, opacity 1s;
+
+  &.active {
+    opacity: 1;
+    height: fit-content
+  }
+}

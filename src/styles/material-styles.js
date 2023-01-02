@@ -35,10 +35,11 @@ export const useStyles = makeStyles((theme) => {
       overflow: 'auto',
     },
     homeContainer: {
-      background: 'rgba(1,1,1, .95)',
-      border: '1px solid rgba(46,49,49, 1)',
+      // background: 'rgba(1,1,1, .95)',
+      // border: '1px solid rgba(46,49,49, 1)',
       padding: '2rem',
       position: 'absolute',
+      textTransform: 'uppercase',
       top: '30%',
     },
     aboutContainer: {
@@ -120,6 +121,9 @@ export const useMobileStyles = makeStyles((theme) => ({
     padding: '2rem',
     position: 'absolute',
     top: '30%',
+  },
+  homeContainerType: {
+    textTransform: 'uppercase',
   },
   aboutContainer: {
     background: 'rgba(46,49,49, .25)',

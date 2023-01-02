@@ -1,30 +1,20 @@
 import React from 'react';
-import { useStyles } from '../styles/material-styles';
-import { Box, Fade, Typography } from '@material-ui/core';
+import '../styles/home.less';
 
 export default function Home(props) {
   const { isFocus, onMobile } = props;
-  const { homeContainer } = useStyles();
   return (
-    <Fade
-      in={isFocus === 'home'}
-      timeout={{ enter: 3500, exit: 1000 }}
-      unmountOnExit
-    >
-      <Box className={homeContainer}>
-        <Typography variant="h1" color="primary">
-          Hello.
-        </Typography>
-        {onMobile ? (
-          <Typography variant="body1" color="error">
-            Will probably crash on ur phone lol
-            <br />
-            But you can click thru the info anyway
-          </Typography>
-        ) : (
-          <></>
-        )}
-      </Box>
-    </Fade>
+    // Must fade in and out on is focus
+    <div className={`home ${isFocus === 'home' ? 'active' : ''}`}>
+      <h1>Hello.</h1>
+      {onMobile ? (
+        <span>
+          Quite honestly this will probably crash on your phone eventually. But
+          all info is still available.
+        </span>
+      ) : (
+        <></>
+      )}
+    </div>
   );
 }

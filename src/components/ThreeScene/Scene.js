@@ -16,7 +16,7 @@ export default function Scene({ isFocus, setFocus, onMobile }) {
       camera={{ position: [150, 150, 5], fov: 18 }}
     >
       <Controls
-        isFocus={isFocus}
+        isFocus={isFocus === '' ? 'home' : isFocus}
         setFocus={setFocus}
         setActive={setActive}
         onMobile={onMobile}

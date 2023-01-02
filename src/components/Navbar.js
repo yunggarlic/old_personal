@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Fade, Button } from '@material-ui/core';
-import { useStyles } from '../styles/material-styles';
+import '../styles/navbar.less';
 
-export default function Navbar({ isFocus, setFocus }) {
-  const { navbar, navButtons, selectedNavButtons } = useStyles();
+export default function Navbar({ setFocus }) {
   const [loaded, setLoaded] = useState(false);
 
   const applyFocus = (e) => {
@@ -23,37 +21,12 @@ export default function Navbar({ isFocus, setFocus }) {
   }, []);
 
   return (
-    <Fade in={loaded} timeout={2000}>
-      <Box className={navbar}>
-        <Button
-          className={navButtons}
-          variant="outlined"
-          color="secondary"
-          onClick={applyFocus}
-          id="home"
-        >{`home`}</Button>
-        <Button
-          className={navButtons}
-          variant="outlined"
-          onClick={applyFocus}
-          color="secondary"
-          id="about"
-        >{`about`}</Button>
-        <Button
-          className={navButtons}
-          variant="outlined"
-          onClick={applyFocus}
-          color="secondary"
-          id="work"
-        >{`work`}</Button>
-        <Button
-          className={navButtons}
-          variant="outlined"
-          onClick={applyFocus}
-          color="secondary"
-          id="bonus"
-        >{`bonus`}</Button>
-      </Box>
-    </Fade>
+    // Must fade in and out on loaded
+    <div className={`navbar ${loaded ? 'active' : ''}`}>
+      <button onClick={applyFocus} id="home">{`home`}</button>
+      <button onClick={applyFocus} id="about">{`about`}</button>
+      <button onClick={applyFocus} id="work">{`work`}</button>
+      <button onClick={applyFocus} id="bonus">{`bonus`}</button>
+    </div>
   );
 }
