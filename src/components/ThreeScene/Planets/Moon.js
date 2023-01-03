@@ -1,11 +1,8 @@
-import React, { useRef } from 'react';
-import { useFrame, useLoader } from 'react-three-fiber';
-import { TextureLoader } from 'three';
+import React, { useRef, useState, useEffect } from 'react';
+import { useFrame } from 'react-three-fiber';
 
-export default function Moon() {
+export default function Moon({base}) {
   const moonMesh = useRef();
-
-  const base = useLoader(TextureLoader, './textures/moonmap4k.jpeg');
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();

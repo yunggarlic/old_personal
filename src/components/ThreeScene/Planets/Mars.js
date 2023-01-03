@@ -1,11 +1,8 @@
-import React, { useRef, useEffect } from 'react';
-import { useFrame, useLoader } from 'react-three-fiber';
-import { TextureLoader, RepeatWrapping } from 'three';
+import React, { useRef } from 'react';
+import { useFrame} from 'react-three-fiber';
 
-export default function Mars() {
+export default function Mars({base}) {
   const marsRef = useRef();
-
-  const base = useLoader(TextureLoader, './textures/5672_mars_2k_color.jpeg');
 
   useFrame(({ clock }) => {
     let t = clock.getElapsedTime();

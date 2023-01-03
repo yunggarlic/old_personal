@@ -6,24 +6,24 @@ export default function Work(props) {
   return (
     //fade in on is focus
     <div className={`work ${isFocus === 'work' ? 'active' : ''}`}>
-      <h3>selected works</h3>
+      <h2>selected works</h2>
       <h3>welcome to the arena - a c++ roguelite</h3>
       <a href="https://github.com/yunggarlic/arena">
         <p>https://github.com/yunggarlic/arena</p>
       </a>
-      <h2>statesmen - a podcast website</h2>
+      <h3>statesmen - a podcast website</h3>
       <a href="http://statesmenpodcast.com">
         <p variant="body2" align="right" component="p" color="secondary">
           statesmenpodcast.com
         </p>
       </a>
-      <h2 align="right" variant="body1" component="h2" color="primary">
+      <h3 align="right" variant="body1" component="h3" color="primary">
         aether - a multiplayer 3D loop synth
-      </h2>
+      </h3>
       <a href="http://aether-leo.herokuapp.com">
         <p>aether-leo.herokuapp.com</p>
       </a>
-      <h2>space place - an ecommerce site</h2>
+      <h3>space place - an ecommerce site</h3>
       <a href="http://graceshopper-epsilon.herokuapp.com">
         <p>graceshopper-epsilon.herokuapp.com</p>
       </a>

@@ -1,13 +1,10 @@
-import React, { useRef, useEffect } from 'react';
-import { useFrame, useLoader } from 'react-three-fiber';
-import { TextureLoader, RepeatWrapping } from 'three';
+import React, { useRef} from 'react';
+import { useFrame} from 'react-three-fiber';
 import Moon from './Moon';
 
-export default function Earth() {
+export default function Earth({base}) {
   const earthRef = useRef();
   const groupRef = useRef();
-
-  const base = useLoader(TextureLoader, './textures/earthmap1k.jpeg');
 
   useFrame(({ clock }) => {
     let t = clock.getElapsedTime();

@@ -3,6 +3,7 @@ export { default as Content } from './Content';
 export { default as Home } from './Home';
 export { default as Navbar } from './Navbar';
 export { default as Work } from './Work';
+export { default as Cursor } from './Cursor';
 
 export { default as AboutMesh } from './ThreeScene/AboutMesh';
 export { default as Box } from './ThreeScene/Box';

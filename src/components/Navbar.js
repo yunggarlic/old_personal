@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/navbar.less';
 
-export default function Navbar({ setFocus }) {
+export default function Navbar({ setFocus, setFirstTime }) {
   const [loaded, setLoaded] = useState(false);
 
   const applyFocus = (e) => {
     const focus = e.target.innerText.toLowerCase();
     setFocus(focus);
+    if(focus !== 'home')
+      setTimeout(() => {setFirstTime(false)},1000);
   };
 
   useEffect(() => {

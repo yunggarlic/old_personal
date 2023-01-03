@@ -1,11 +1,8 @@
-import React, { useRef, useEffect } from 'react';
-import { useFrame, useLoader } from 'react-three-fiber';
-import { TextureLoader, RepeatWrapping } from 'three';
+import React, { useRef, useEffect, useState } from 'react';
+import { useFrame} from 'react-three-fiber';
 
-export default function Jupiter() {
+export default function Jupiter({base}) {
   const jupiterRef = useRef();
-
-  const base = useLoader(TextureLoader, './textures/jupiter2_2k.jpeg');
 
   useFrame(({ clock }) => {
     let t = clock.getElapsedTime();

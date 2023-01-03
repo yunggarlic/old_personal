@@ -1,13 +1,10 @@
 import React, { useRef, useEffect } from 'react';
-import { useFrame, useLoader } from 'react-three-fiber';
+import { useFrame } from 'react-three-fiber';
 import { TextureLoader, RepeatWrapping } from 'three';
 
-export default function Saturn() {
+export default function Saturn({base}) {
   const saturnRef = useRef();
   const ringRef = useRef();
-
-  const base = useLoader(TextureLoader, './textures/saturnmap.jpeg');
-  const ring = useLoader(TextureLoader, './textures/saturnringcolor.jpeg');
 
   useEffect(() => {
     // ringRef.current.rotateX(1.4);
