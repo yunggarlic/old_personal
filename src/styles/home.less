@@ -1,28 +1,4 @@
-@keyframes colors {
-  0% {
-    color: #ff7890;
-  }
-
-  20% {
-    color: #fa9e5c;
-  }
-
-  40% {
-    color: #fefe72;
-  }
-
-  60% {
-    color: #2bcf6a;
-  }
-
-  80% {
-    color: #2a5cff;
-  }
-
-  100% {
-    color: #ff7890;
-  }
-}
+@import "text-color.less";
 
 .home {
   position: absolute;
@@ -31,23 +7,32 @@
   top: 30%;
   transition: opacity 1s;
   opacity: 0;
-  height: 0;
-  transition: height 0.5s, opacity 1s;
-
+  transition: opacity 1s, visibility 1s;
+  visibility: hidden;
+  
   &.active {
+    transition-delay: 1s;
     opacity: 1;
+    visibility: visible;
     height: fit-content
   }
 
   h1 {
     margin: 0;
 
-    text-shadow: 0 0 2rem #000;
+    text-shadow: 0 0 4rem #000;
     text-transform: uppercase;
+    text-align: center;
     font-weight: 900;
-    font-size: 7.7vw;
+    font-size: 4.6vw;
     font-family: 'system-ui';
 
-    animation: colors 10s linear 0s infinite normal;
+    background-color: transparent !important;
+
+    // animation: colors 10s linear 0s infinite normal;
+  }
+  p{
+    color: white;
+    text-align: center;
   }
 }

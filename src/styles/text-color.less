@@ -1,0 +1,75 @@
+@keyframes colors {
+  0% {
+    --color: var(--color00);
+    color: var(--color00);
+    background-color: var(--color00);
+  }
+
+  20% {
+    --color: var(--color20);
+    color: var(--color20);
+    background-color: var(--color20);
+  }
+
+  40% {
+    --color: var(--color40);
+    color: var(--color40);
+    background-color: var(--color40);
+  }
+
+  60% {
+    --color: var(--color60);
+    color: var(--color60);
+    background-color: var(--color60);
+  }
+
+  80% {
+    --color: var(--color80);
+    color: var(--color80);
+    background-color: var(--color80);
+  }
+
+  100% {
+    --color: var(--color100);
+    color: var(--color100);
+    background-color: var(--color100);
+  }
+}
+
+@keyframes backgroundColors {
+  0% {
+    background-color: #ff7890;
+  }
+
+  20% {
+    background-color: #fa9e5c;
+  }
+
+  40% {
+    background-color: #fefe72;
+  }
+
+  60% {
+    background-color: #2bcf6a;
+  }
+
+  80% {
+    background-color: #2a5cff;
+  }
+
+  100% {
+    background-color: #ff7890;
+  }
+}
+
+.text-rainbow, h1 {
+  --color00: #ff7890;
+  --color20: #fa9e5c;
+  --color40: #fefe72;
+  --color60: #2bcf6a;
+  --color80: #2a5cff;
+  --color100: #ff7890;
+  color: var(--color);
+  background-color: var(--color);
+  animation: colors 10s linear 0s infinite normal;
+}

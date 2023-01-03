@@ -10,11 +10,15 @@
   max-width: 67%;
   align-self: flex-end;
   opacity: 0;
-  height: 0;
-  transition: height 0.5s, opacity 1s;
+  transition: opacity 1s, visibility 1s;
+  visibility: hidden;
+
+  color: white;
 
   &.active {
     opacity: 1;
+    visibility: visible;
+    transition-delay: 1s;
     height: fit-content
   }
 }
