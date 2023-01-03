@@ -13,7 +13,7 @@ export default function About(props) {
         </p>
         <p>
           Fullstack developer with a passion for creating beautiful, intuitive,
-          and useful applications. I have experience acorss a wide range of
+          and useful applications. I have experience across a wide range of
           technologies and languages, but I am most comfortable with React,
           Node, and Python.
         </p>

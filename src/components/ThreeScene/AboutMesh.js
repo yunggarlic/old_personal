@@ -3,6 +3,7 @@ import AboutMeshLights from './AboutMeshLights';
 import { useFrame } from 'react-three-fiber';
 import { useSpring } from 'react-spring/three';
 
+
 export default function AboutMesh(props) {
   const { position } = props;
   const mesh = useRef();
