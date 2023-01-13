@@ -52,6 +52,10 @@ body {
   }
 }
 
+.work, .about{
+  background-color: rgba(0,0,0,0.97);
+}
+
 button {
   height: 30px;
   width: 10vw;
@@ -69,10 +73,26 @@ button {
     height: 50px;
   }
 }
+a{
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  transition: border-color 100ms linear;
+  padding-bottom: 3px;
+  &:hover{
+    border-color: transparent;
+  }
+}
+
 
 .buttonContainer {
   display: flex;
   align-items: center;
   height: 50px;
   margin: 1rem 0;
+  
+  a{
+    border-bottom: none;
+    padding-bottom: none;
+  }
 }
