@@ -12,7 +12,7 @@ export default function Work(props) {
       <h3 align="right" variant="body1" component="h3" color="primary">
         aether - a multiplayer 3D loop synth
       </h3>
-      <a href="http://aether-leo.herokuapp.com">aether-leo.herokuapp.com</a>
+      <a href="http://aether-music.herokuapp.com">aether-music.herokuapp.com</a>
       <h3>space place - an ecommerce site</h3>
       <a href="http://space-place.herokuapp.com">space-place.herokuapp.com</a>
       <div className="buttonContainer">
