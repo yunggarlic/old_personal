@@ -1,6 +1,6 @@
 * {
   cursor: none;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 0.08em;
 }
 
@@ -23,6 +23,8 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+
+  line-height: 1.4;
 
   .content {
     z-index: 1;
@@ -52,8 +54,9 @@ body {
   }
 }
 
-.work, .about{
-  background-color: rgba(0,0,0,0.97);
+.work,
+.about {
+  background-color: rgba(0, 0, 0, 0.97);
 }
 
 button {
@@ -73,13 +76,15 @@ button {
     height: 50px;
   }
 }
-a{
+
+a {
   color: white;
   text-decoration: none;
   border-bottom: 2px solid white;
   transition: border-color 100ms linear;
-  padding-bottom: 3px;
-  &:hover{
+  // padding-bottom: 3px;
+
+  &:hover {
     border-color: transparent;
   }
 }
@@ -90,8 +95,18 @@ a{
   align-items: center;
   height: 50px;
   margin: 1rem 0;
-  
-  a{
+
+  button {
+    height: 30px;
+    transition: 0.5s height ease-in-out;
+    min-width: max-content;
+
+    &:hover {
+      height: 50px;
+    }
+  }
+
+  a {
     border-bottom: none;
     padding-bottom: none;
   }

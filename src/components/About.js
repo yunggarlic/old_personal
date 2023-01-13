@@ -18,7 +18,7 @@ export default function About(props) {
           Node, and Python.
         </p>
         <p>
-          Currently, I am a Developer at Critical Mass, and developing
+          Currently, I am a Developer at <a target='_blank' href='https://www.criticalmass.com/'>Critical Mass</a>, and developing
           independently on a fullstack application for a local startup. I am
           always looking for new opportunities to learn, build, and have a
           laugh.
@@ -26,7 +26,7 @@ export default function About(props) {
       </div>
       <div className="buttonContainer">
         <button>
-          <a href="http://www.linkedin.com/in/timferrari">Connect with me!</a>
+          <a href="http://www.linkedin.com/in/timferrari">connect with me!</a>
         </button>
       </div>
     </div>

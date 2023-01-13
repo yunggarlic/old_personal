@@ -14,7 +14,7 @@ export default function Home(props) {
       </h1>
       <div className={`buttonContainer ${isFirstTime ? '' : 'active'}`}>
         <button>
-          <a href="http://www.linkedin.com/in/timferrari">Connect with me!</a>
+          <a href="http://www.linkedin.com/in/timferrari">connect with me!</a>
         </button>
       </div>
       {onMobile ? (
