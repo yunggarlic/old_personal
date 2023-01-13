@@ -8,23 +8,24 @@ import { TextureLoader } from 'three';
 
 export default function Main() {
   const [isFocus, setFocus] = useState('');
+  const [wasFocus, setWasFocus] = useState('');
   const [onMobile, setMobile] = useState(false);
   const [isFirstTime, setFirstTime] = useState(true);
-  console.log('main')
 
   useEffect(() => {
     window.screen.width / window.screen.height < 1.3
       ? setMobile(true)
       : setMobile(false);
-  })
+  });
 
-  const textures = useLoader(TextureLoader, ['./textures/sunmap.jpeg',
-  './textures/mercurymap.jpeg',
-  './textures/venusmap.jpeg',
-  './textures/earthmap1k.jpeg',
-  './textures/5672_mars_2k_color.jpeg',
-  './textures/jupiter2_2k.jpeg',
-])
+  const textures = useLoader(TextureLoader, [
+    './textures/sunmap.jpeg',
+    './textures/mercurymap.jpeg',
+    './textures/venusmap.jpeg',
+    './textures/earthmap1k.jpeg',
+    './textures/5672_mars_2k_color.jpeg',
+    './textures/jupiter2_2k.jpeg',
+  ]);
 
   return (
     <div id="main">
@@ -33,9 +34,14 @@ export default function Main() {
         isFocus={isFocus}
         setFocus={setFocus}
         setFirstTime={setFirstTime}
+        setWasFocus={setWasFocus}
         onMobile={onMobile}
       />
-      <Content isFocus={isFocus} onMobile={onMobile} isFirstTime={isFirstTime}/>
+      <Content
+        isFocus={isFocus}
+        onMobile={onMobile}
+        isFirstTime={isFirstTime}
+      />
       <div className="scene">
         <Scene
           id="scene"
@@ -43,6 +49,7 @@ export default function Main() {
           isFocus={isFocus}
           setFocus={setFocus}
           textures={textures}
+          wasFocus={wasFocus}
         />
       </div>
       <Cursor />
