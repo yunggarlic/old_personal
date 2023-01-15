@@ -8,7 +8,9 @@ export default function Work(props) {
     <div className={`work ${isFocus === 'work' ? 'active' : ''}`}>
       <h2>selected works</h2>
       <h3>
-        <a href="http://statesmenpodcast.com">statesmen - a podcast website</a>
+        <a href="http://statesmenpodcast.com">
+          statesmen - a podcast portfolio site
+        </a>
       </h3>
 
       <h3 align="right" variant="body1" component="h3" color="primary">
@@ -19,6 +21,11 @@ export default function Work(props) {
       <h3>
         <a href="http://space-place.herokuapp.com">
           space place - an ecommerce site
+        </a>
+      </h3>
+      <h3>
+        <a href="http://tygko.herokuapp.com">
+          tygko - a music artist portfolio site
         </a>
       </h3>
       <div className="buttonContainer">
