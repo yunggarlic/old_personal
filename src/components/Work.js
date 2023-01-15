@@ -7,27 +7,27 @@ export default function Work(props) {
     //fade in on is focus
     <div className={`work ${isFocus === 'work' ? 'active' : ''}`}>
       <h2>selected works</h2>
-      <h3>
+      <p>
         <a href="http://statesmenpodcast.com">
           statesmen - a podcast portfolio site
         </a>
-      </h3>
+      </p>
 
-      <h3 align="right" variant="body1" component="h3" color="primary">
+      <p>
         <a href="http://aether-music.herokuapp.com">
           aether - a multiplayer 3D loop synth
         </a>
-      </h3>
-      <h3>
+      </p>
+      <p>
         <a href="http://space-place.herokuapp.com">
           space place - an ecommerce site
         </a>
-      </h3>
-      <h3>
+      </p>
+      <p>
         <a href="http://tygko.herokuapp.com">
           tygko - a music artist portfolio site
         </a>
-      </h3>
+      </p>
       <div className="buttonContainer">
         <button>
           <a href="http://www.github.com/yunggarlic">check out my github</a>
