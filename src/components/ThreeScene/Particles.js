@@ -72,7 +72,8 @@ export default function Particles({ count, active, setActive }) {
       // important to note that this mesh is a matrix of particles and uses matrixAt with i for index
       if (mesh.current) mesh.current.setMatrixAt(i, dummy.matrix);
     });
-    mesh.current.instanceMatrix.needsUpdate = true;
+    if (mesh.current && mesh.current.instanceMatrix)
+      mesh.current.instanceMatrix.needsUpdate = true;
   });
   return (
     <>
