@@ -70,7 +70,7 @@ export default function Particles({ count, active, setActive }) {
       dummy.updateMatrix();
       // And apply the matrix to the instanced item
       // important to note that this mesh is a matrix of particles and uses matrixAt with i for index
-      mesh.current.setMatrixAt(i, dummy.matrix);
+      if (mesh.current) mesh.current.setMatrixAt(i, dummy.matrix);
     });
     mesh.current.instanceMatrix.needsUpdate = true;
   });
