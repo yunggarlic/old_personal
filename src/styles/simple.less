@@ -1,0 +1,151 @@
+#app {
+  height: 100%;
+  overflow: hidden;
+}
+
+.main {
+  cursor: none;
+  height: 100vh;
+  padding: 0px 20vw;
+
+  #cursor {
+    mix-blend-mode: soft-light;
+  }
+
+  margin: 0 auto;
+  background-color: #5ea257;
+  color: white;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  p {
+    font-family: 'Bellefair', serif;
+    font-weight: 300;
+    line-height: 1em;
+  }
+
+  p {
+    line-height: 1.4em;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    transition: border-color 0.2s;
+    color: white;
+
+    &.hovered {
+      border-color: transparent;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+
+    button {
+      height: 50px;
+      transition: 0.2s height ease-in-out;
+      min-width: max-content;
+
+      &.hovered {
+        height: 70px;
+      }
+    }
+
+    a {
+      border-bottom: none;
+      padding-bottom: none;
+    }
+  }
+
+  #home,
+  #work,
+  #about {
+    max-height: 0;
+    visibility: hidden;
+    transition: visibility 0.2s, opacity 0.2s;
+    opacity: 0;
+
+    * {
+      pointer-events: none;
+    }
+
+    &.active {
+      * {
+        pointer-events: auto;
+      }
+
+      max-height: 1000px;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &.disabled {
+      display: none;
+    }
+  }
+
+  button {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 300;
+    color: white;
+    cursor: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid white;
+
+    a {
+      border: none;
+    }
+  }
+
+  h1 {
+    font-size: 72px;
+  }
+
+  span {
+    font-size: 28px;
+  }
+
+  #navbar {
+    @media (max-width: 768px) {
+      display: none;
+
+    }
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // margin-top: 1rem;
+    position: relative;
+    top: 15px;
+    // padding: 20px 0;
+
+    button {
+      margin: 0 10px;
+      width: 20vw;
+      max-width: 200px;
+      transition: height 0.2s, color 0.2s, background-color 0.2s;
+
+      &.active {
+        color: black;
+        background-color: white;
+        height: 70px;
+      }
+    }
+  }
+
+  .content {
+    padding: 1rem 0;
+  }
+}

@@ -1,8 +1,8 @@
-import React from 'react'
-import '../styles/about.less'
+import React from 'react';
+import '../styles/about.less';
 
 export default function About(props) {
-  const {isFocus, onMobile} = props
+  const { isFocus, onMobile } = props;
   return (
     // Must fade in and out on is focus
     <div className={`about ${isFocus === 'about' ? 'active' : ''}`}>
@@ -14,14 +14,16 @@ export default function About(props) {
         <p>
           Fullstack developer with a passion for creating beautiful, intuitive,
           and useful applications. I have experience across a wide range of
-          technologies and languages, but I am most comfortable with React,
-          Node, and Python.
+          technologies and languages.
         </p>
         <p>
-          Currently, I am a Developer at <a target='_blank' href='https://www.criticalmass.com/'>Critical Mass</a>, and developing
-          independently on a fullstack application for a local startup. I am
-          always looking for new opportunities to learn, build, and have a
-          laugh.
+          Currently, I am a Developer at{' '}
+          <a target="_blank" href="https://www.criticalmass.com/">
+            Critical Mass
+          </a>
+          , and developing independently on a fullstack application for a local
+          startup. I am always looking for new opportunities to learn, build,
+          and have a laugh.
         </p>
       </div>
       <div className="buttonContainer">
@@ -30,5 +32,5 @@ export default function About(props) {
         </button>
       </div>
     </div>
-  )
+  );
 }
