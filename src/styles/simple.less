@@ -7,9 +7,92 @@
   cursor: none;
   height: 100vh;
   padding: 0px 20vw;
+  overflow: scroll;
 
   #cursor {
     mix-blend-mode: soft-light;
+  }
+
+  .content {
+    padding: 1rem 0;
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      .top,
+      .bottom {
+        stroke-dasharray: 110% 200;
+      }
+
+      .left,
+      .right {
+        stroke-dasharray: 100% 20;
+      }
+
+      line {
+        stroke-width: 3;
+        stroke: #ecf0f1;
+        fill: none;
+        transition: all 0.8s;
+        transition-delay: 0.1s;
+      }
+    }
+
+    div.active {
+      .top {
+        transform: translateX(100%);
+      }
+
+      .bottom {
+        transform: translateX(100%);
+      }
+
+      .left {
+        transform: translateY(100%);
+      }
+
+      .right {
+        transform: translateY(100%);
+      }
+    }
+
+    div {
+      .top {
+        transform: translateX(100%);
+      }
+
+      .bottom {
+        transform: translateX(100%);
+      }
+
+      .right {
+        transform: translateY(100%);
+      }
+
+      .left {
+        transform: translateY(100%);
+      }
+    }
+
+    div:hover {
+      .top {
+        transform: translateX(0px);
+      }
+
+      .bottom {
+        transform: translateX(0px);
+      }
+
+      .right {
+        transform: translateY(0px);
+      }
+
+      .left {
+        transform: translateY(0px);
+      }
+    }
   }
 
   margin: 0 auto;
@@ -52,7 +135,7 @@
 
     button {
       height: 50px;
-      transition: 0.2s height ease-in-out;
+      transition: 0.2s height, 0.2s border-color;
       min-width: max-content;
 
       &.hovered {
@@ -68,7 +151,8 @@
 
   #home,
   #work,
-  #about {
+  #fun {
+    position: relative;
     max-height: 0;
     visibility: hidden;
     transition: visibility 0.2s, opacity 0.2s;
@@ -93,20 +177,31 @@
     }
   }
 
+  #home {
+    padding: 20px;
+  }
+
   button {
     font-family: 'Segoe UI', sans-serif;
-    font-weight: 300;
-    color: white;
+    font-weight: 800;
+    color: #126516;
     cursor: none;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-decoration: none;
-    background-color: transparent;
-    border: 1px solid white;
+    background-color: #c9e3c4;
+    border: 1px solid transparent;
 
     a {
       border: none;
+      height: 100%;
+      width: 100%;
+      color: inherit;
     }
+
+    // &:hover {
+    //   border: 1px solid white;
+    // }
   }
 
   h1 {
@@ -126,26 +221,20 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    // margin-top: 1rem;
     position: relative;
     top: 15px;
-    // padding: 20px 0;
 
     button {
       margin: 0 10px;
       width: 20vw;
       max-width: 200px;
-      transition: height 0.2s, color 0.2s, background-color 0.2s;
+      transition: height 0.2s, color 0.2s, background-color 0.2s, border-color 0.2s;
+      border: 1px solid transparent;
 
       &.active {
-        color: black;
         background-color: white;
         height: 70px;
       }
     }
-  }
-
-  .content {
-    padding: 1rem 0;
   }
 }
