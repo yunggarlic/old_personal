@@ -14,7 +14,9 @@
   }
 
   .content {
-    padding: 1rem 0;
+    padding: 2rem 0;
+    margin: 0 auto;
+    max-width: 1000px;
 
     svg {
       position: absolute;
@@ -23,12 +25,12 @@
 
       .top,
       .bottom {
-        stroke-dasharray: 110% 200;
+        stroke-dasharray: 100vw 200;
       }
 
       .left,
       .right {
-        stroke-dasharray: 100% 20;
+        stroke-dasharray: 100vw 20;
       }
 
       line {
@@ -41,54 +43,41 @@
     }
 
     div.active {
-      .top {
-        transform: translateX(100%);
-      }
 
+      .top,
       .bottom {
         transform: translateX(100%);
+
       }
 
-      .left {
-        transform: translateY(100%);
-      }
-
+      .left,
       .right {
         transform: translateY(100%);
       }
     }
 
     div {
-      .top {
-        transform: translateX(100%);
-      }
 
+      .top,
       .bottom {
         transform: translateX(100%);
       }
 
-      .right {
-        transform: translateY(100%);
-      }
 
+      .right,
       .left {
         transform: translateY(100%);
       }
     }
 
     div:hover {
-      .top {
-        transform: translateX(0px);
-      }
 
+      .top,
       .bottom {
         transform: translateX(0px);
       }
 
-      .right {
-        transform: translateY(0px);
-      }
-
+      .right,
       .left {
         transform: translateY(0px);
       }
@@ -131,12 +120,12 @@
     display: flex;
     align-items: center;
     height: 70px;
-    width: 100%;
+    // width: 100%;
 
     button {
       height: 50px;
       transition: 0.2s height, 0.2s border-color;
-      min-width: max-content;
+      // min-width: max-content;
 
       &.hovered {
         height: 70px;
@@ -157,6 +146,7 @@
     visibility: hidden;
     transition: visibility 0.2s, opacity 0.2s;
     opacity: 0;
+    padding: 20px;
 
     * {
       pointer-events: none;
@@ -175,10 +165,6 @@
     &.disabled {
       display: none;
     }
-  }
-
-  #home {
-    padding: 20px;
   }
 
   button {
@@ -213,16 +199,20 @@
   }
 
   #navbar {
-    @media (max-width: 768px) {
-      display: none;
-
-    }
-
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: relative;
     top: 15px;
+    max-width: 1000px;
+
+    #content-fun {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: flex;
+      }
+    }
 
     button {
       margin: 0 10px;

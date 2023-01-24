@@ -4,6 +4,7 @@ import Cursor from './SimpleComponents/Cursor';
 
 const Simple = () => {
   const [isFocus, setIsFocus] = useState('home');
+  const [onMobile, setMobile] = useState(false);
   const sections = ['home', 'fun', 'work'];
 
   //set active class on navbar buttons
@@ -44,15 +45,21 @@ const Simple = () => {
       const navbar = document.querySelector('#navbar');
       home.classList.add('active');
       navbar.classList.add('active');
-    }, 1000);
+    }, 500);
   }, []);
+
+  useEffect(() => {
+    window.screen.width / window.screen.height < 1.3
+      ? setMobile(true)
+      : setMobile(false);
+  });
 
   return (
     <div className="main">
       <div id="navbar">
         {sections.map((section, i) => {
           return (
-            <div id={i} className="buttonContainer">
+            <div id={`content-${section}`} className="buttonContainer">
               <button onClick={handleClick}>{section}</button>
             </div>
           );
