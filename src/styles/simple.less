@@ -37,7 +37,7 @@
         stroke-width: 3;
         stroke: #ecf0f1;
         fill: none;
-        transition: all 0.8s;
+        transition: all 0.35s;
         transition-delay: 0.1s;
       }
     }
@@ -167,6 +167,12 @@
     }
   }
 
+  #work,
+  #fun {
+    width: max-content;
+    margin: 0 auto;
+  }
+
   button {
     font-family: 'Segoe UI', sans-serif;
     font-weight: 800;
@@ -205,6 +211,21 @@
     position: relative;
     top: 15px;
     max-width: 1000px;
+    margin: 0 auto;
+
+    transition: width 0.5s;
+
+    .nav-fun {
+      &.explored {
+        visibility: visible;
+        max-width: 1000px;
+      }
+
+      visibility: hidden;
+      max-width: 0;
+      transition: max-width 0.5s,
+      height 0.2s;
+    }
 
     #content-fun {
       display: none;

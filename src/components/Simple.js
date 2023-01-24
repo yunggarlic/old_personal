@@ -5,6 +5,7 @@ import Cursor from './SimpleComponents/Cursor';
 const Simple = () => {
   const [isFocus, setIsFocus] = useState('home');
   const [onMobile, setMobile] = useState(false);
+  const [explored, setExplored] = useState(0);
   const sections = ['home', 'fun', 'work'];
 
   //set active class on navbar buttons
@@ -28,7 +29,6 @@ const Simple = () => {
     //Mount new component and initiate inbound transition
     setTimeout(() => {
       setIsFocus(e.target.innerText.toLowerCase());
-      console.log(isFocus);
       const sections = document.querySelectorAll('.content > div');
       sections.forEach((section) => {
         section.classList.remove('active');
@@ -37,6 +37,14 @@ const Simple = () => {
         }
       });
     }, 200);
+
+    if (explored >= 0) {
+      const funbar = document.querySelector('#navbar .nav-fun');
+      if (!funbar.classList.contains('explored'))
+        funbar.classList.add('explored');
+    } else {
+      setExplored(explored + 1);
+    }
   };
 
   useEffect(() => {
@@ -60,7 +68,7 @@ const Simple = () => {
         {sections.map((section, i) => {
           return (
             <div id={`content-${section}`} className="buttonContainer" key={i}>
-              <button id={i} onClick={handleClick}>
+              <button class={`nav-${section}`} onClick={handleClick}>
                 {section}
               </button>
             </div>
