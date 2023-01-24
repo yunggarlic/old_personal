@@ -59,8 +59,10 @@ const Simple = () => {
       <div id="navbar">
         {sections.map((section, i) => {
           return (
-            <div id={`content-${section}`} className="buttonContainer">
-              <button onClick={handleClick}>{section}</button>
+            <div id={`content-${section}`} className="buttonContainer" key={i}>
+              <button id={i} onClick={handleClick}>
+                {section}
+              </button>
             </div>
           );
         })}
@@ -88,10 +90,22 @@ const Simple = () => {
               local startup. I am always looking for new opportunities to build.
             </p>
             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-              <line class="top" x1="0" y1="0" x2="100%" y2="0"></line>
-              <line class="left" x1="0" y1="0" x2="0" y2="100%"></line>
-              <line class="bottom" x1="0" y1="100%" x2="100%" y2="100%"></line>
-              <line class="right" x1="100%" y1="0" x2="100%" y2="100%"></line>
+              <line className="top" x1="0" y1="0" x2="100%" y2="0"></line>
+              <line className="left" x1="0" y1="0" x2="0" y2="100%"></line>
+              <line
+                className="bottom"
+                x1="0"
+                y1="100%"
+                x2="100%"
+                y2="100%"
+              ></line>
+              <line
+                className="right"
+                x1="100%"
+                y1="0"
+                x2="100%"
+                y2="100%"
+              ></line>
             </svg>
           </div>
         ) : (
