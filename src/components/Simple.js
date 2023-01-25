@@ -8,7 +8,7 @@ const Simple = () => {
   const [explored, setExplored] = useState(0);
   const sections = ['home', 'fun', 'work'];
 
-  //set active class on navbar buttons
+  //set active className on navbar buttons
   const handleClick = (e) => {
     const buttons = document.querySelectorAll('#navbar button');
     buttons.forEach((button) => {
@@ -40,7 +40,7 @@ const Simple = () => {
 
     if (explored >= 0) {
       const funbar = document.querySelector('#navbar .nav-fun');
-      if (!funbar.classList.contains('explored'))
+      if (!funbar.classList.contains('explored') && !onMobile)
         funbar.classList.add('explored');
     } else {
       setExplored(explored + 1);
@@ -57,7 +57,7 @@ const Simple = () => {
   }, []);
 
   useEffect(() => {
-    window.screen.width / window.screen.height < 1.3
+    window.screen.width < window.screen.height
       ? setMobile(true)
       : setMobile(false);
   });
@@ -68,7 +68,7 @@ const Simple = () => {
         {sections.map((section, i) => {
           return (
             <div id={`content-${section}`} className="buttonContainer" key={i}>
-              <button class={`nav-${section}`} onClick={handleClick}>
+              <button className={`nav-${section}`} onClick={handleClick}>
                 {section}
               </button>
             </div>
@@ -124,7 +124,7 @@ const Simple = () => {
             <p>Seeing as you're on a non-mobile device...</p>
             <p>Perhaps you'd like to see the other version of the site?</p>
             <p>It's graphically demanding!</p>
-            <div class="buttonContainer">
+            <div className="buttonContainer">
               <button>
                 <a href="/fun">Fun Time</a>
               </button>
@@ -135,7 +135,7 @@ const Simple = () => {
         )}
         {isFocus === 'work' ? (
           <div id="work">
-            <h2>Selected Works</h2>
+            <h1>Selected Works</h1>
             <p>
               <a href="http://statesmenpodcast.com">
                 Statesmen - a Podcast Portfolio Website
@@ -168,7 +168,7 @@ const Simple = () => {
           <> </>
         )}
       </div>
-      <Cursor />
+      {onMobile ? <></> : <Cursor />}
     </div>
   );
 };

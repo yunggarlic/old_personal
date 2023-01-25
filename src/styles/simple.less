@@ -1,22 +1,63 @@
+html {
+  overflow: scroll;
+
+  h1 {
+    font-size: 10vw;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 5vw;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+
+    h1 {
+      font-size: 72px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+  }
+}
+
 #app {
-  height: 100%;
   overflow: hidden;
 }
 
 .main {
-  cursor: none;
-  height: 100vh;
   padding: 0px 20vw;
+  padding-bottom: 50px;
   overflow: scroll;
+  margin: 0 auto;
+  background-color: #5ea257;
+  color: white;
+
+  @media (min-width: 768px) {
+    height: 100vh;
+    padding-bottom: 0;
+  }
 
   #cursor {
     mix-blend-mode: soft-light;
   }
 
+  @media(min-width: 768px) {
+    cursor: none;
+  }
+
   .content {
-    padding: 2rem 0;
+    padding: 1rem 0 2rem 0;
     margin: 0 auto;
     max-width: 1000px;
+    min-height: 100vh;
+
+    @media (min-width: 768px) {
+      min-height: 0;
+    }
+
 
     svg {
       position: absolute;
@@ -42,20 +83,6 @@
       }
     }
 
-    div.active {
-
-      .top,
-      .bottom {
-        transform: translateX(100%);
-
-      }
-
-      .left,
-      .right {
-        transform: translateY(100%);
-      }
-    }
-
     div {
 
       .top,
@@ -63,30 +90,39 @@
         transform: translateX(100%);
       }
 
-
       .right,
       .left {
         transform: translateY(100%);
       }
-    }
 
-    div:hover {
+      &.active {
 
-      .top,
-      .bottom {
-        transform: translateX(0px);
+        top,
+        .bottom {
+          transform: translateX(100%);
+
+        }
+
+        .left,
+        .right {
+          transform: translateY(100%);
+        }
       }
 
-      .right,
-      .left {
-        transform: translateY(0px);
+      &:hover {
+
+        .top,
+        .bottom {
+          transform: translateX(0px);
+        }
+
+        .right,
+        .left {
+          transform: translateY(0px);
+        }
       }
     }
   }
-
-  margin: 0 auto;
-  background-color: #5ea257;
-  color: white;
 
   h1,
   h2,
@@ -157,7 +193,7 @@
         pointer-events: auto;
       }
 
-      max-height: 1000px;
+      max-height: 10000px;
       visibility: visible;
       opacity: 1;
     }
@@ -169,7 +205,7 @@
 
   #work,
   #fun {
-    width: max-content;
+    //width: max-content;
     margin: 0 auto;
   }
 
@@ -196,24 +232,25 @@
     // }
   }
 
-  h1 {
-    font-size: 72px;
-  }
-
-  span {
-    font-size: 28px;
-  }
-
   #navbar {
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: relative;
-    top: 15px;
+    top: 0px;
     max-width: 1000px;
     margin: 0 auto;
+    margin-top: 10px;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
 
     transition: width 0.5s;
+
+    @media (min-width: 768px) {
+      top: 15px;
+    }
 
     .nav-fun {
       &.explored {
