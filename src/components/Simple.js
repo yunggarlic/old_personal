@@ -60,7 +60,7 @@ const Simple = () => {
     window.screen.width < window.screen.height
       ? setMobile(true)
       : setMobile(false);
-  });
+  }, []);
 
   return (
     <div className="main">
@@ -121,6 +121,7 @@ const Simple = () => {
         )}
         {isFocus === 'fun' ? (
           <div id="fun">
+            <h1>Hmm...</h1>
             <p>Seeing as you're on a non-mobile device...</p>
             <p>Perhaps you'd like to see the other version of the site?</p>
             <p>It's graphically demanding!</p>

@@ -10,6 +10,11 @@ html {
     font-size: 5vw;
   }
 
+  a {
+    z-index: 2;
+    position: relative;
+  }
+
   @media (min-width: 768px) {
     font-size: 24px;
 
@@ -66,12 +71,12 @@ html {
 
       .top,
       .bottom {
-        stroke-dasharray: 100vw 200;
+        stroke-dasharray: 200vw 200;
       }
 
       .left,
       .right {
-        stroke-dasharray: 100vw 20;
+        stroke-dasharray: 200vw 20;
       }
 
       line {
@@ -222,6 +227,8 @@ html {
 
     a {
       border: none;
+      display: flex;
+      align-items: center;
       height: 100%;
       width: 100%;
       color: inherit;
@@ -266,6 +273,7 @@ html {
 
     #content-fun {
       display: none;
+      order: 3;
 
       @media (min-width: 768px) {
         display: flex;
