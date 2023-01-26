@@ -5,14 +5,14 @@ import Cursor from './SimpleComponents/Cursor'
 const Simple = () => {
   const [isFocus, setIsFocus] = useState('home')
   const [onMobile, setMobile] = useState(false)
-  const [showSocials, setShowSocials] = useState(false);
+  const [showSocials, setShowSocials] = useState(false)
   const [explored, setExplored] = useState(0)
   const sections = ['home', 'fun', 'work']
 
   const handleSocials = (e) => {
     //toggle socials visibility
     console.log('?')
-    setShowSocials(!showSocials);
+    setShowSocials(!showSocials)
   }
 
   //set active className on navbar buttons
@@ -123,18 +123,6 @@ const Simple = () => {
                 y2="100%"
               ></line>
             </svg>
-            {explored > 1 ? (
-              <div className="buttonContainer socials">
-                <button onClick={handleSocials}>Business Inquiries:</button>
-                  <div className={`${showSocials ? 'active' : ''} socials`}>
-                    <a href="mailto:ferrari.tim.v@gmail.com">Email</a>
-                    <a href="https://www.linkedin.com/in/timferrari/">LinkedIn</a>
-                    <a href="https://twitter.com/infected_butt">Twitter</a>
-                  </div>
-              </div>
-            ) : (
-              <></>
-            )}
           </div>
         ) : (
           <></>
@@ -184,6 +172,14 @@ const Simple = () => {
                   Check out my GitHub
                 </a>
               </button>
+            </div>
+            <div className="buttonContainer socials">
+              <button onClick={handleSocials}>Business Inquiries</button>
+              <div className={`${showSocials ? 'active' : ''} socials`}>
+                <a href="mailto:ferrari.tim.v@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/timferrari/">LinkedIn</a>
+                <a href="https://twitter.com/infected_butt">Twitter</a>
+              </div>
             </div>
           </div>
         ) : (

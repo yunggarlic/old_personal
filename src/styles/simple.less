@@ -54,7 +54,7 @@ html {
     mix-blend-mode: soft-light;
   }
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     cursor: none;
   }
 
@@ -71,12 +71,11 @@ html {
       margin: 0 auto;
     }
 
-
     svg {
       position: absolute;
       top: 0;
       left: 0;
-      z-index:0;
+      z-index: 0;
 
       .top,
       .bottom {
@@ -98,7 +97,6 @@ html {
     }
 
     div {
-
       .top,
       .bottom {
         transform: translateX(100%);
@@ -110,11 +108,9 @@ html {
       }
 
       &.active {
-
         top,
         .bottom {
           transform: translateX(100%);
-
         }
 
         .left,
@@ -124,7 +120,6 @@ html {
       }
 
       &:hover {
-
         .top,
         .bottom {
           transform: translateX(0px);
@@ -223,9 +218,13 @@ html {
     margin: 0 auto;
   }
 
-  #work{
-    span{
+  #work {
+    span {
       font-size: 0.6rem;
+    }
+
+    .buttonContainer{
+      margin: 10px 0;
     }
   }
 
@@ -239,13 +238,9 @@ html {
     text-decoration: none;
     background-color: #c9e3c4;
     border: 1px solid transparent;
-
+    width: 50%;
     a {
       border: none;
-      display: flex;
-      align-items: center;
-      height: 100%;
-      width: 100%;
       color: inherit;
     }
 
@@ -272,8 +267,7 @@ html {
 
       visibility: hidden;
       max-width: 0;
-      transition: max-width 0.5s,
-      height 0.2s;
+      transition: max-width 0.5s, height 0.2s;
     }
 
     #content-fun {
@@ -289,7 +283,8 @@ html {
       margin: 0 10px;
       width: 20vw;
       max-width: 200px;
-      transition: height 0.2s, color 0.2s, background-color 0.2s, border-color 0.2s;
+      transition: height 0.2s, color 0.2s, background-color 0.2s,
+        border-color 0.2s;
       border: 1px solid transparent;
 
       &.active {
@@ -299,15 +294,21 @@ html {
     }
   }
 
-  .buttonContainer.socials{
+  .buttonContainer.socials {
     transition: none;
     height: auto;
     position: relative;
+    flex-direction: column;
+    align-items: flex-start;
     z-index: 1;
-    button{
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+    button {
       width: 50%;
     }
-    .socials{
+    .socials {
       line-height: 0px;
       width: 0%;
       overflow: hidden;
@@ -315,24 +316,29 @@ html {
       z-index: 99;
 
       display: flex;
-      flex-direction: column;
+      
+      flex-direction: row;
       justify-content: space-between;
-      align-items: flex-end;      
-  
-      &.active{
+      align-items: flex-start;
+
+      @media (min-width: 768px) {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      &.active {
         width: 50%;
         line-height: 32px;
       }
 
-      a{
+      a {
         border-bottom: 1px solid white;
         transition: border-color 0.2s;
         margin: 10px 0;
-        &.hovered{
+        &.hovered {
           border-color: transparent;
         }
       }
     }
   }
-  
 }
