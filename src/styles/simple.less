@@ -1,13 +1,17 @@
 html {
   overflow: scroll;
 
+  @media (min-width: 768px) {
+    overflow: hidden;
+  }
+
   h1 {
     font-size: 10vw;
     margin-top: 0;
   }
 
   p {
-    font-size: 5vw;
+    font-size: 6vw;
   }
 
   a {
@@ -33,16 +37,17 @@ html {
 }
 
 .main {
-  padding: 0px 20vw;
-  padding-bottom: 50px;
   overflow: scroll;
   margin: 0 auto;
   background-color: #5ea257;
   color: white;
+  min-height: 100vh;
 
   @media (min-width: 768px) {
+    padding: 0px 20vw;
     height: 100vh;
     padding-bottom: 0;
+    overflow: hidden;
   }
 
   #cursor {
@@ -54,13 +59,16 @@ html {
   }
 
   .content {
-    padding: 1rem 0 2rem 0;
-    margin: 0 auto;
+    padding: 2rem 0 2rem 0;
+    margin: 0 10px;
+
     max-width: 1000px;
     // min-height: 100vh;
 
     @media (min-width: 768px) {
       min-height: 0;
+      padding: 1rem 0 2rem 0;
+      margin: 0 auto;
     }
 
 
@@ -68,6 +76,7 @@ html {
       position: absolute;
       top: 0;
       left: 0;
+      z-index:0;
 
       .top,
       .bottom {
@@ -214,6 +223,12 @@ html {
     margin: 0 auto;
   }
 
+  #work{
+    span{
+      font-size: 0.6rem;
+    }
+  }
+
   button {
     font-family: 'Segoe UI', sans-serif;
     font-weight: 800;
@@ -244,20 +259,10 @@ html {
     flex-direction: row;
     justify-content: center;
     position: relative;
-    top: 0px;
     max-width: 1000px;
     margin: 0 auto;
     margin-top: 10px;
-
-    @media (min-width: 768px) {
-      margin-top: 0;
-    }
-
     transition: width 0.5s;
-
-    @media (min-width: 768px) {
-      top: 15px;
-    }
 
     .nav-fun {
       &.explored {
@@ -293,4 +298,41 @@ html {
       }
     }
   }
+
+  .buttonContainer.socials{
+    transition: none;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    button{
+      width: 50%;
+    }
+    .socials{
+      line-height: 0px;
+      width: 0%;
+      overflow: hidden;
+      transition: width 0.2s, line-height 0.2s;
+      z-index: 99;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;      
+  
+      &.active{
+        width: 50%;
+        line-height: 32px;
+      }
+
+      a{
+        border-bottom: 1px solid white;
+        transition: border-color 0.2s;
+        margin: 10px 0;
+        &.hovered{
+          border-color: transparent;
+        }
+      }
+    }
+  }
+  
 }

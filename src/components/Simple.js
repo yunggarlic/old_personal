@@ -1,66 +1,74 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/simple.less';
-import Cursor from './SimpleComponents/Cursor';
+import React, {useState, useEffect} from 'react'
+import '../styles/simple.less'
+import Cursor from './SimpleComponents/Cursor'
 
 const Simple = () => {
-  const [isFocus, setIsFocus] = useState('home');
-  const [onMobile, setMobile] = useState(false);
-  const [explored, setExplored] = useState(0);
-  const sections = ['home', 'fun', 'work'];
+  const [isFocus, setIsFocus] = useState('home')
+  const [onMobile, setMobile] = useState(false)
+  const [showSocials, setShowSocials] = useState(false);
+  const [explored, setExplored] = useState(0)
+  const sections = ['home', 'fun', 'work']
+
+  const handleSocials = (e) => {
+    //toggle socials visibility
+    console.log('?')
+    setShowSocials(!showSocials);
+  }
 
   //set active className on navbar buttons
   const handleClick = (e) => {
-    const buttons = document.querySelectorAll('#navbar button');
+    const buttons = document.querySelectorAll('#navbar button')
     buttons.forEach((button) => {
-      button.classList.remove('active');
-    });
-    e.target.classList.add('active');
+      button.classList.remove('active')
+    })
+    e.target.classList.add('active')
 
-    const activeSection = document.querySelector('.content > div.active');
+    const activeSection = document.querySelector('.content > div.active')
 
     //Initiate outbound transition
-    activeSection.classList.remove('active');
+    activeSection.classList.remove('active')
 
     //Transition lasts 200ms, then dismount component
     setTimeout(() => {
-      setIsFocus('');
-    }, 200);
+      setIsFocus('')
+    }, 200)
 
     //Mount new component and initiate inbound transition
     setTimeout(() => {
-      setIsFocus(e.target.innerText.toLowerCase());
-      const sections = document.querySelectorAll('.content > div');
+      setIsFocus(e.target.innerText.toLowerCase())
+      const sections = document.querySelectorAll('.content > div')
       sections.forEach((section) => {
-        section.classList.remove('active');
+        section.classList.remove('active')
         if (section.id === e.target.innerText.toLowerCase()) {
-          section.classList.add('active');
+          section.classList.add('active')
         }
-      });
-    }, 200);
+      })
+    }, 200)
 
-    if (explored >= 0) {
-      const funbar = document.querySelector('#navbar .nav-fun');
+    if (explored <= 0) {
+      setExplored(1)
+      const funbar = document.querySelector('#navbar .nav-fun')
       if (!funbar.classList.contains('explored') && !onMobile)
-        funbar.classList.add('explored');
+        funbar.classList.add('explored')
     } else {
-      setExplored(explored + 1);
+      setExplored(explored + 1)
     }
-  };
+  }
 
   useEffect(() => {
     setTimeout(() => {
-      const home = document.querySelector('#home');
-      const navbar = document.querySelector('#navbar');
-      home.classList.add('active');
-      navbar.classList.add('active');
-    }, 500);
-  }, []);
+      const home = document.querySelector('#home')
+      const navbar = document.querySelector('#navbar')
+      home.classList.add('active')
+      navbar.classList.add('active')
+    }, 500)
+  }, [])
 
   useEffect(() => {
     window.screen.width < window.screen.height
       ? setMobile(true)
-      : setMobile(false);
-  }, []);
+      : setMobile(false)
+  }, [])
 
   return (
     <div className="main">
@@ -72,7 +80,7 @@ const Simple = () => {
                 {section}
               </button>
             </div>
-          );
+          )
         })}
       </div>
       <div className="content">
@@ -115,6 +123,18 @@ const Simple = () => {
                 y2="100%"
               ></line>
             </svg>
+            {explored > 1 ? (
+              <div className="buttonContainer socials">
+                <button onClick={handleSocials}>Business Inquiries:</button>
+                  <div className={`${showSocials ? 'active' : ''} socials`}>
+                    <a href="mailto:ferrari.tim.v@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/timferrari/">LinkedIn</a>
+                    <a href="https://twitter.com/infected_butt">Twitter</a>
+                  </div>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
         ) : (
           <></>
@@ -137,6 +157,7 @@ const Simple = () => {
         {isFocus === 'work' ? (
           <div id="work">
             <h1>Selected Works</h1>
+            <span>Hosted for free, may load slowly. Patience appreciated!</span>
             <p>
               <a href="http://statesmenpodcast.com">
                 Statesmen - a Podcast Portfolio Website
@@ -171,7 +192,7 @@ const Simple = () => {
       </div>
       {onMobile ? <></> : <Cursor />}
     </div>
-  );
-};
+  )
+}
 
-export default Simple;
+export default Simple
