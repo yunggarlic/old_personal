@@ -47,7 +47,7 @@ html {
     padding: 0px 20vw;
     height: 100vh;
     padding-bottom: 0;
-    overflow: hidden;
+    //overflow: hidden;
   }
 
   #cursor {
@@ -97,6 +97,7 @@ html {
     }
 
     div {
+
       .top,
       .bottom {
         transform: translateX(100%);
@@ -108,6 +109,7 @@ html {
       }
 
       &.active {
+
         top,
         .bottom {
           transform: translateX(100%);
@@ -120,6 +122,7 @@ html {
       }
 
       &:hover {
+
         .top,
         .bottom {
           transform: translateX(0px);
@@ -223,7 +226,7 @@ html {
       font-size: 0.6rem;
     }
 
-    .buttonContainer{
+    .buttonContainer {
       margin: 10px 0;
     }
   }
@@ -239,6 +242,7 @@ html {
     background-color: #c9e3c4;
     border: 1px solid transparent;
     width: 50%;
+
     a {
       border: none;
       color: inherit;
@@ -267,7 +271,8 @@ html {
 
       visibility: hidden;
       max-width: 0;
-      transition: max-width 0.5s, height 0.2s;
+      transition: max-width 0.5s,
+      height 0.2s;
     }
 
     #content-fun {
@@ -294,51 +299,63 @@ html {
     }
   }
 
-  .buttonContainer.socials {
-    transition: none;
-    height: auto;
-    position: relative;
-    flex-direction: column;
-    align-items: flex-start;
-    z-index: 1;
+  #work>div.socials {
+    display: flex;
+    flex-direction: row;
 
-    @media (min-width: 768px) {
-      flex-direction: row;
-    }
-    button {
+    &>div {
       width: 50%;
     }
-    .socials {
+
+    .buttonContainer {
+      width: 50%;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .socials.links {
       line-height: 0px;
       width: 0%;
       overflow: hidden;
       transition: width 0.2s, line-height 0.2s;
       z-index: 99;
+      // margin-left: 15px;
 
       display: flex;
-      
-      flex-direction: row;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: flex-start;
-
-      @media (min-width: 768px) {
-        flex-direction: column;
-        align-items: flex-end;
-      }
+      align-items: flex-end;
 
       &.active {
         width: 50%;
         line-height: 32px;
       }
+    }
 
-      a {
-        border-bottom: 1px solid white;
-        transition: border-color 0.2s;
-        margin: 10px 0;
-        &.hovered {
-          border-color: transparent;
-        }
+    a {
+      border-bottom: 1px solid white;
+      transition: border-color 0.2s;
+      margin: 10px 0;
+
+      &.hovered {
+        border-color: transparent;
+      }
+    }
+
+    .buttonContainer.socials {
+      transition: none;
+      height: auto;
+      position: relative;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 1;
+
+      button {
+        width: 100%;
       }
     }
   }
+
 }
