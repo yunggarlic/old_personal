@@ -152,17 +152,17 @@ const Simple = () => {
               </a>
             </p>
             <p>
-              <a href="http://aether-music.herokuapp.com">
+              <a href="http://aether.timferrari.com">
                 Aether - a Multiplayer Loop Synthesizer
               </a>
             </p>
             <p>
-              <a href="http://space-place.herokuapp.com">
+              <a href="http://space-place.timferrari.com">
                 Space Place - an e-Commerce Website
               </a>
             </p>
             <p>
-              <a href="http://tygko.herokuapp.com">
+              <a href="http://tygko.timferrari.com">
                 TYGKO - a Musician Portfolio Website
               </a>
             </p>
