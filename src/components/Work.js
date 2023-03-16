@@ -14,7 +14,7 @@ export default function Work(props) {
       </p>
 
       <p>
-        <a href="http://aether-music.herokuapp.com">
+        <a href="http://aether.herokuapp.com">
           aether - a multiplayer 3D loop synth
         </a>
       </p>
